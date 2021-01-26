@@ -1,0 +1,32 @@
+{
+  "name": "@open-wa/util",
+  "version": "0.0.1",
+  "description": "Utilities for all @open-wa node libraries",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-wa/utils-nodejs.git"
+  },
+  "author": "SMASHAH <shah@idk.uno>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/open-wa/utils-nodejs/issues"
+  },
+  "homepage": "https://github.com/open-wa/utils-nodejs#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "datauri": "^3.0.0",
+    "file-type": "^16.2.0",
+    "is-url": "^1.2.4",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "@types/validator": "^13.1.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
