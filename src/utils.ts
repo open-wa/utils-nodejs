@@ -1,6 +1,8 @@
 import { DataURL } from "./models";
 import axios from 'axios';
-import isURL from 'validator/es/lib/isURL';
+const validator = require('validator');
+// import isURL from 'validator/es/lib/isURL';
+
 
 /**
  * A convinience method to download the [[DataURL]] of a file
@@ -52,4 +54,4 @@ export const isDataURL = (s: string) => !!s.match(/^data:((?:\w+\/(?:(?!;).)+)?)
 
 export const isBase64 = (s: string) => /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/.test(s)
 
-export const isUrl = (s: string) => isURL(s)
+export const isUrl = (s: string) => validator.isURL(s)
