@@ -1,5 +1,6 @@
 import { DataURL } from "./models";
 import axios from 'axios';
+const FileType = require('file-type');
 const validator = require('validator');
 // import isURL from 'validator/es/lib/isURL';
 
@@ -55,3 +56,8 @@ export const isDataURL = (s: string) => !!s.match(/^data:((?:\w+\/(?:(?!;).)+)?)
 export const isBase64 = (s: string) => /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/.test(s)
 
 export const isUrl = (s: string) => validator.isURL(s)
+
+export const bufferToDataURI = async (buff: Buffer) => {
+  const {mime} = await FileType.fromBuffer(buff)
+  return `data:${mime};base64,${buff.toString('base64')}`
+}
