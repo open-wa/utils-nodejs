@@ -1,8 +1,9 @@
 {
   "name": "@open-wa/util",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utilities for all @open-wa node libraries",
-  "main": "./dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +14,9 @@
   },
   "author": "SMASHAH <shah@idk.uno>",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/open-wa/utils-nodejs/issues"
   },
