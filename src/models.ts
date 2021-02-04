@@ -86,6 +86,18 @@ export type StickerMetadata = {
      * @default ``
      */
     pack: string
+    /**
+     * Attempt to remove the background of the sticker. Only valid for paid licenses. 
+     * options:
+     *  `true`  - remove background after resizing
+     *  `HQ`    - remove background before resizing (i.e on original photo)
+     * @default `false`
+     */
+    removebg ?: boolean | string
+    /**
+     * Setting this to `true` will skip the resizing/square-cropping of the sticker. It will instead 'letterbox' the image with a transparent background.
+     */
+    keepScale ?: boolean
   }
 
   export type Mp4StickerConversionProcessOptions = {
