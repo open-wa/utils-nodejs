@@ -11,7 +11,7 @@ const validator = require('validator');
  * @param optionsOverride You can use this to override the [axios request config](https://github.com/axios/axios#request-config)
  * @returns Promise<DataURL>
  */
-export async function getDUrl(url: string, optionsOverride: any = {}, returnBuffer : boolean = false){
+export async function getDUrl(url: string, optionsOverride: any = {}, returnBuffer : boolean = false, throwErr: boolean = false){
     try {
       const res = await axios({
           method:"get",
@@ -26,7 +26,8 @@ export async function getDUrl(url: string, optionsOverride: any = {}, returnBuff
       const dUrl : DataURL = `data:${res.headers['content-type']};base64,${Buffer.from(res.data, 'binary').toString('base64')}`;
       return returnBuffer ? res.data : dUrl ;
     } catch (error) {
-      console.log("TCL: getDUrl -> error", error)
+      if(throwErr) throw error;
+      return false;
     }
   }
   

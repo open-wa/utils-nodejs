@@ -1,6 +1,6 @@
 {
   "name": "@open-wa/util",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Utilities for all @open-wa node libraries",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
