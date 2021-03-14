@@ -130,4 +130,9 @@ export type StickerMetadata = {
      * default `true`
      */
     crop?: boolean;
+    /**
+     * A number representing the WxH of the output sticker (default `512x512`). Lowering this number is a great way to process longer duration stickers. The max value is `512`.
+     * default `512`
+     */
+    square ?: number
   }
