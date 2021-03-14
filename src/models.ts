@@ -98,6 +98,10 @@ export type StickerMetadata = {
      * Setting this to `true` will skip the resizing/square-cropping of the sticker. It will instead 'letterbox' the image with a transparent background.
      */
     keepScale ?: boolean
+    /**
+     * Your Discord ID to get your onto the sticker leaderboard!
+     */
+    discord ?: string
   }
 
   export type Mp4StickerConversionProcessOptions = {
