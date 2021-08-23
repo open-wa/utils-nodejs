@@ -12,14 +12,16 @@ const validator = require('validator');
  * @returns Promise<DataURL>
  */
 export async function getDUrl(url: string, optionsOverride: any = {}, returnBuffer : boolean = false, throwErr: boolean = false){
+    const headers = {
+      'DNT':1,
+      'Upgrade-Insecure-Requests':1
+    }
+    if(url.includes("tiktok.com/video")) headers["Referer"] = url;
     try {
       const res = await axios({
           method:"get",
           url,
-          headers: {
-            'DNT':1,
-            'Upgrade-Insecure-Requests':1
-          },
+          headers,
           ...optionsOverride,
           responseType: 'arraybuffer'
         });

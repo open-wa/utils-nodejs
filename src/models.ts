@@ -99,7 +99,7 @@ export type StickerMetadata = {
      */
     keepScale ?: boolean
     /**
-     * Your Discord ID to get your onto the sticker leaderboard!
+     * Your Discord ID to get onto the sticker leaderboard!
      */
     discord ?: string
   }
@@ -130,6 +130,11 @@ export type StickerMetadata = {
      * default `true`
      */
     crop?: boolean;
+    /**
+     * Prints ffmpeg logs in the terminal
+     * @default `false`
+     */
+    log?: boolean
     /**
      * A number representing the WxH of the output sticker (default `512x512`). Lowering this number is a great way to process longer duration stickers. The max value is `512`.
      * default `512`
